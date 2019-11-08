@@ -10,7 +10,7 @@
 
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1>{{ $user->username}}</h1>
-                <a href="#">New Post</a>
+                <a href="/p/create">New Post</a>
             </div>
 
             <div class="d-flex">
