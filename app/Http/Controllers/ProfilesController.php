@@ -18,17 +18,23 @@ class ProfilesController extends Controller
         return view('profiles.index',compact('user'));
     }
     public function edit(User $user)
-    {
+    {   
+        //policy for edit link
+        $this->authorize('update',$user->profile);
+
         return view('profiles.edit',compact('user'));
     }
     public function update(User $user)
     {
+        //policy for save action 
+        $this->authorize('update',$user->profile);
         $data = request()->validate([
             'description' => 'required',
             'link' => 'url',
             'image' => ''
         ]);
-        $user->profile->update($data);
+        //use user in auth
+        auth()->user()->profile->update($data);
         return redirect("/profile/{$user->id}"); 
     }
 }
