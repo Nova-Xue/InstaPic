@@ -9,8 +9,14 @@
         <div class="col-md-8 pt-4">
 
             <div class="d-flex justify-content-between align-items-baseline">
-                <h1>{{ $user->username}}</h1>
+                <div class="d-flex">
+                    <span class="pt-2">{{ $user->username}}</span>
+                    <follow-button></follow-button>
+                </div>
+                <!-- policy check -->
+                @can('update',$user->profile)
                 <a href="/p/create">New Post</a>
+                @endcan
             </div>
             <!-- policy check to render the edit link -->
             @can('update',$user->profile)
