@@ -9,7 +9,7 @@ class RelationController extends Controller
 {
     //
     public function follow(User $user)
-    {
-         return $user->username;
+    {   
+        return auth()->user()->following()->toggle($user->profile);
     }
 }

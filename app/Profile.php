@@ -18,4 +18,8 @@ class Profile extends Model
         $path = ($this->image) ? '/storage/'.$this->image : '/images/Canva - null.png';
         return $path;
     }
+    public function followers()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }
