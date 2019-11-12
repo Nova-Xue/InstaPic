@@ -16,7 +16,9 @@ class ProfilesController extends Controller
         // return view('profiles.index',[
         //     'user' => $user
         // ]);
-        return view('profiles.index',compact('user'));
+        $follow = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+        //dd($follow);
+        return view('profiles.index',compact('user','follow'));
     }
     public function edit(User $user)
     {   
@@ -47,6 +49,6 @@ class ProfilesController extends Controller
             $data,
             $imageArray ?? [],//set imageArray or change nothing to image
         ));
-        return redirect("/profile/{$user->id}"); 
+       return redirect("/profile/{$user->id}"); 
     }
 }

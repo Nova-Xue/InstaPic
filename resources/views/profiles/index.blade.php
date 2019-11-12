@@ -11,7 +11,7 @@
             <div class="d-flex justify-content-between align-items-baseline">
                 <div class="d-flex">
                     <span class="pt-2">{{ $user->username}}</span>
-                    <follow-button user-id="{{$user->id}}"></follow-button>
+                    <follow-button user-id="{{$user->id}}" follow="{{$follow}}"></follow-button>
                 </div>
                 <!-- policy check -->
                 @can('update',$user->profile)
