@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    InstaGame
+                    InstaPic
                 </div>
 
                 <div class="links">

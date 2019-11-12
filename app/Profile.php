@@ -13,4 +13,9 @@ class Profile extends Model
         return $this->belongsTo(User::class);
 
     }
+    public function profileImage(){
+
+        $path = ($this->image) ? '/storage/'.$this->image : '/images/Canva - null.png';
+        return $path;
+    }
 }

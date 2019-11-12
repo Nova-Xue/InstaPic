@@ -9,10 +9,11 @@
         <div class="col-md-4">
             <div class="d-flex pb-4">
                 <div>
-                    <img src="/storage/{{$post->user->profile->image}}" alt="icon" class="rounded-circle mr-4" style="max-width:50px">
+                    <img src="{{$post->user->profile->profileImage()}}" alt="icon" class="rounded-circle mr-4" style="max-width:50px">
                 </div>
-                <div>
-                    <h1><a href="/profile/{{$post->user->id}}">{{$post->user->username}}</a></h1>
+                <div class="d-flex pt-3">
+                    <a href="/profile/{{$post->user->id}}">{{$post->user->username}}</a>
+                    <a href="" class="pl-4">Follow</a>
                 </div>
             </div>
             <div>{{$post->caption}}</div>
