@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <img src="/images/Canva - null.png" alt="coke" class="rounded-circle" style="max-width:200px">
+            <img src="/storage/{{$user->profile->image}}" alt="icon" class="rounded-circle" style="max-width:200px">
         </div>
         <div class="col-md-8 pt-4">
 

@@ -36,6 +36,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //set a default profile when created a new user
+    protected static function boot()
+    {
+        parent::boot();
+        static::created(function ($user){
+            $user->profile()->create();
+        });
+    }
     //association
     public function profile (){
 
