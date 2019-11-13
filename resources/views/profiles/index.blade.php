@@ -23,9 +23,9 @@
             <div class="pb-2"><a href="/profile/{{$user->id}}/edit">Edit</a></div>
             @endcan
             <div class="d-flex">
-                <div class="pr-3">{{$user->posts->count()}} Posts</div>
-                <div class="pr-3">{{$user->profile->followers()->count()}} Followers</div>
-                <div class="pr-3">{{$user->following()->count()}} Followings</div>
+                <div class="pr-3">{{$postsCount}} Posts</div>
+                <div class="pr-3">{{$followersCount}} Followers</div>
+                <div class="pr-3">{{$followingCount}} Followings</div>
             </div>
             <div>
                 <p>{{$user->profile->description}}</p>
