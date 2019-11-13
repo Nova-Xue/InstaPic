@@ -16,7 +16,7 @@ class PostController extends Controller
     {
         $users = auth()->user()->following()->pluck('profiles.user_id');
         //dd($users);
-        $posts = Post::whereIn('user_id',$users)->latest()->get();
+        $posts = Post::whereIn('user_id',$users)->latest()->paginate(2);
         //dd($posts);
         return view('posts.index',compact('posts'));
     }
@@ -33,7 +33,7 @@ class PostController extends Controller
         
         $imagePath= request('image')->store('uploads','public');
         //image resize
-        $image =Image::make(public_path("storage/{$imagePath}"))->fit(200,200);
+        $image =Image::make(public_path("storage/{$imagePath}"))->fit(1000,1000);
         $image->save();
         auth()->user()->posts()->create([
             'caption' => $data['caption'],
