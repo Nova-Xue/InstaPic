@@ -24,8 +24,8 @@
             @endcan
             <div class="d-flex">
                 <div class="pr-3">{{$user->posts->count()}} Posts</div>
-                <div class="pr-3">444 Followers</div>
-                <div class="pr-3">444 Followings</div>
+                <div class="pr-3">{{$user->profile->followers()->count()}} Followers</div>
+                <div class="pr-3">{{$user->following()->count()}} Followings</div>
             </div>
             <div>
                 <p>{{$user->profile->description}}</p>
