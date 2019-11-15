@@ -41,9 +41,10 @@ class PostController extends Controller
         ]);
         return redirect('/profile/'.auth()->user()->id);
     }
-    public function show(\App\Post $post)
+    public function show(Post $post)
     {
         //dd($post);
-        return view('posts.show',compact('post'));
+        $follow = (auth()->user()) ? auth()->user()->following->contains($post->user->id) : false;
+        return view('posts.show',compact('post','follow'));
     }
 }

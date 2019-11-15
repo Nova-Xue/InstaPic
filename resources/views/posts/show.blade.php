@@ -13,7 +13,7 @@
                 </div>
                 <div class="d-flex pt-3">
                     <a href="/profile/{{$post->user->id}}">{{$post->user->username}}</a>
-                    <a href="" class="pl-4">Follow</a>
+                    <follow-button user-id="{{$post->user->id}}" follow="{{$follow}}"></follow-button>
                 </div>
             </div>
             <div>{{$post->caption}}</div>
