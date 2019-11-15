@@ -17,11 +17,40 @@
                 </div>
             </div>
             <div>{{$post->caption}}</div>
+            <div class="comment-modal">
+                
+
+                <form action="/c/{{$post->id}}" enctype="multipart/form-data" method="post">
+                    @csrf
+                    <div class="form-group row">
+                        <div class="col">
+
+                            <label for="comment" class="col col-form-label">{{ __('comment') }}</label>
+
+                            <div class="col">
+                                <input type="hidden" name="postId" value="{{$post->id}}">
+                                <input id="comment" type="text" class="form-control @error('comment') is-invalid @enderror" name="comment" value="{{ old('comment') }}" autocomplete="comment" autofocus>
+
+                                @error('comment')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
+                        </div>
+                    </div>
+                    <button>Add Your Comment</button>
+                </form>
+
+            </div>
+
+
             <h3>Comments</h3>
             @foreach($comments as $comment)
             <div class="row py-2">
                 <div class="col-md-4">
-                    <a href="/profile/{$comment->user_id}">
+                    <a href="/profile/{{$comment->user_id}}">
                         {{$comment->username}}
                     </a>
                 </div>
