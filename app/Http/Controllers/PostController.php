@@ -45,6 +45,7 @@ class PostController extends Controller
     {
         //dd($post);
         $follow = (auth()->user()) ? auth()->user()->following->contains($post->user->id) : false;
-        return view('posts.show',compact('post','follow'));
+        $comments = $post->comment;
+        return view('posts.show',compact('post','follow','comments'));
     }
 }
