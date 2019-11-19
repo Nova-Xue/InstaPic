@@ -25,7 +25,7 @@
                     <div class="form-group row">
                         <div class="col">
 
-                            <label for="comment" class="col col-form-label">{{ __('comment') }}</label>
+                            <label for="comment" class="col col-form-label">{{ __('Comment') }}</label>
 
                             <div class="col">
                                 <input type="hidden" name="postId" value="{{$post->id}}">
@@ -40,7 +40,7 @@
 
                         </div>
                     </div>
-                    <button>Add Your Comment</button>
+                    <button class="btn-secondary">Add Your Comment</button>
                 </form>
 
             </div>
