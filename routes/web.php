@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'ProfilesController@index')->name('home');
+Route::get('/','PostController@index');
 Route::post('/p/','PostController@store');
 Route::post('/c/{post}','CommentsController@store');
 Route::get('/p/create','PostController@create');
@@ -26,4 +26,3 @@ Route::get('/profile/{user}','ProfilesController@index')->name('profile.show');
 Route::get('/profile/{user}/edit','ProfilesController@edit')->name('profile.edit');
 Route::patch('/profile/{user}','ProfilesController@update')->name('profile.update');
 Route::post('/follow/{user}','RelationController@follow');
-Route::get('/','PostController@index');

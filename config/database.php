@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => 'mysql',
 
     /*
     |--------------------------------------------------------------------------
@@ -35,22 +35,22 @@ return [
 
     'connections' => [
 
-        'sqlite' => [
-            'driver' => 'sqlite',
-            'url' => env('DATABASE_URL'),
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
-        ],
+        // 'sqlite' => [
+        //     'driver' => 'sqlite',
+        //     'url' => env('DATABASE_URL'),
+        //     'database' => env('DB_DATABASE', database_path('database.sqlite')),
+        //     'prefix' => '',
+        //     'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+        // ],
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL','mysql://xi40363mygoav9kl:dy6w8dwn0vj66e2q@kf3k4aywsrp0d2is.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/eu63splxlnmixv1t'),
-            'host' => env('DB_HOST', 'kf3k4aywsrp0d2is.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'eu63splxlnmixv1t'),
-            'username' => env('DB_USERNAME', 'xi40363mygoav9kl'),
-            'password' => env('DB_PASSWORD', 'dy6w8dwn0vj66e2q'),
+            'url' => 'mysql://xi40363mygoav9kl:dy6w8dwn0vj66e2q@kf3k4aywsrp0d2is.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/eu63splxlnmixv1t',
+            'host' => 'kf3k4aywsrp0d2is.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+            'port' => 3306,
+            'database' => 'eu63splxlnmixv1t',
+            'username' => 'xi40363mygoav9kl',
+            'password' => 'dy6w8dwn0vj66e2q',
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
